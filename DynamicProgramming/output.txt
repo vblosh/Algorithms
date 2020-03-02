@@ -1,0 +1,3 @@
+max SubSequince is [4]{2,3,6,9}
+max cost of the knapsack with repeated things is 48 {[3]{6,2,2}}
+max cost of the knapsack  46

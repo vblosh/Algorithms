@@ -1,0 +1,8 @@
+NULL
+NULL
+123->NULL
+123->NULL
+2->1->NULL
+1->2->NULL
+4->3->2->1->NULL
+1->2->3->4->NULL

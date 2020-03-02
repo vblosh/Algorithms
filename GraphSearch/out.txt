@@ -1,0 +1,16 @@
+PrintEdges: 
+A:A->D tree, A->C tree, A->B tree, 
+B:B->F back, B->E tree, B->A back, 
+C:C->F tree, C->A back, 
+D:D->H tree, D->G tree, D->A back, 
+E:E->J tree, E->I tree, E->B back, 
+F:F->D cross, F->B tree, 
+G:G->H back, G->D back, 
+H:H->G tree, H->D back, 
+I:I->J back, I->E back, 
+J:J->I tree, J->E back, 
+K:K->L tree, 
+L:L->K back, 
+Connected Components: 
+Component 1:K,L,
+Component 2:A,B,C,D,E,F,G,H,I,J,
