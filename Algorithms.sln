@@ -69,6 +69,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "KnapSackProblem", "KnapSack
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RangeIntersection", "RangeIntersection\RangeIntersection.vcxproj", "{7066FCB8-CB3F-4513-A980-BCC86B9782B9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharSequence", "CharSequence\CharSequence.vcxproj", "{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -401,6 +403,16 @@ Global
 		{7066FCB8-CB3F-4513-A980-BCC86B9782B9}.Release|x64.Build.0 = Release|x64
 		{7066FCB8-CB3F-4513-A980-BCC86B9782B9}.Release|x86.ActiveCfg = Release|Win32
 		{7066FCB8-CB3F-4513-A980-BCC86B9782B9}.Release|x86.Build.0 = Release|Win32
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Debug|x64.ActiveCfg = Debug|x64
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Debug|x64.Build.0 = Debug|x64
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Debug|x86.ActiveCfg = Debug|Win32
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Debug|x86.Build.0 = Debug|Win32
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Release|Any CPU.ActiveCfg = Release|Win32
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Release|x64.ActiveCfg = Release|x64
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Release|x64.Build.0 = Release|x64
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Release|x86.ActiveCfg = Release|Win32
+		{B37B4C11-E1F5-4508-9EAE-D4E4FA67666C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
