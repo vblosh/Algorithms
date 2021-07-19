@@ -213,7 +213,7 @@ _Pvt_Extensions/
 ModelManifest.xml
 /Algorithms.VC.VC.opendb
 /Algorithms.VC.db
-/MergeSort
+MergeSort
 
 # Python cache
 __pycache__/
