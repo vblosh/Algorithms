@@ -73,6 +73,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharSequence", "CharSequenc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BacktrackingKnightsTour", "BacktrackingKnightsTour\BacktrackingKnightsTour.csproj", "{EBD214D6-A6F1-43BF-A3AD-60D5410AC244}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnapSack", "KnapSackBranchandBounds\KnapSack.csproj", "{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -423,6 +425,18 @@ Global
 		{EBD214D6-A6F1-43BF-A3AD-60D5410AC244}.Release|x64.Build.0 = Release|Any CPU
 		{EBD214D6-A6F1-43BF-A3AD-60D5410AC244}.Release|x86.ActiveCfg = Release|Any CPU
 		{EBD214D6-A6F1-43BF-A3AD-60D5410AC244}.Release|x86.Build.0 = Release|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Debug|x64.Build.0 = Debug|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Debug|x86.Build.0 = Debug|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Release|x64.ActiveCfg = Release|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Release|x64.Build.0 = Release|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Release|x86.ActiveCfg = Release|Any CPU
+		{B71081EE-402E-4106-AC15-8BAA7B0A6FBF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
