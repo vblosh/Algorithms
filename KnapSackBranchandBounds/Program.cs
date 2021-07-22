@@ -32,10 +32,10 @@ namespace KnapSack
         // Driver code
         public static void Main()
         {
-            int[] val = new int[] { 10, 25, 35, 5, 1, 60, 100, 120, 100, 200, 12, 20, 18, 79, 56, 45, 87, 98, 42, 31 };
-            int[] wt = new int[] { 1, 2, 3, 1, 4, 1, 2, 2, 3, 4, 1, 2, 4, 5, 1, 6, 8, 10, 4, 2 };
-            int W = 20;
-            int N = 20;
+            int[] val = new int[] { 10, 25, 35, 5, 1, 60, 100, 120, 100, 200, 12, 20, 18, 79, 56, 45, 87, 98, 42, 31, 10, 25, 35, 55, 1, 60, 110, 10, 15, 20 };
+            int[] wt = new int[] { 1, 2, 3, 1, 4, 1, 2, 2, 3, 4, 1, 2, 4, 5, 1, 6, 8, 10, 4, 2, 4, 1, 2, 2, 3, 4, 1, 2, 4, 5, 1, 6, 8 };
+            int W = 30;
+            int N = 30;
             /*			for (int j = 1; j <= 10; j++)
                         {
                             for (int i = 1; i <= 10; i++)
@@ -52,17 +52,33 @@ namespace KnapSack
                             }
                         }
             */
-            IKnapSackSolver solver1 = new RecursiveSolver(wt, val);
-            int solution1 = solver1.SolveKnapSack(W);
-            PrintSolution(solver1, W, solution1);
+ //           for (int i = 0; i < 3; i++)
+            {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                IKnapSackSolver solver1 = new RecursiveSolver(wt, val, N);
+                int solution1 = solver1.SolveKnapSack(W);
+                sw.Stop();
+                double dur1 = sw.Elapsed.TotalMilliseconds;
+                Console.WriteLine($"Duration {sw.Elapsed.TotalMilliseconds}");
+                PrintSolution(solver1, W, solution1);
 
-            IKnapSackSolver solver2 = new RecursiveWithMemoSolver(wt, val, N);
-            int solution2 = solver2.SolveKnapSack(W);
-            PrintSolution(solver2, W, solution2);
+                IKnapSackSolver solver2 = new RecursiveWithMemoSolver(wt, val, N);
+                sw.Restart();
+                int solution2 = solver2.SolveKnapSack(W);
+                sw.Stop();
+                double dur2 = sw.Elapsed.TotalMilliseconds;
+                Console.WriteLine($"Duration {sw.Elapsed.TotalMilliseconds}");
+                PrintSolution(solver2, W, solution1);
 
-            IKnapSackSolver solver3 = new TableSolver(wt, val, N);
-            int solution3 = solver3.SolveKnapSack(W);
-            PrintSolution(solver3, W, solution3);
+                IKnapSackSolver solver3 = new TableSolver(wt, val, N);
+                sw.Restart();
+                int solution3 = solver3.SolveKnapSack(W);
+                sw.Stop();
+                double dur3 = sw.Elapsed.TotalMilliseconds;
+                Console.WriteLine($"Duration {sw.Elapsed.TotalMilliseconds}");
+                PrintSolution(solver3, W, solution3);
+            }
         }
     }
 }

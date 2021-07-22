@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace KnapSack
@@ -9,13 +8,13 @@ namespace KnapSack
         struct TableCell
         {
             public int Value;
-            public Stack<int> Objects;
+            public ulong Objects;
         };
         int[] weights, values;
         int size;
         int complexity;
         TableCell[,] table;
-        int[] objectsInculed;
+        IEnumerable<int> objectsInculed;
 
         public IEnumerable<int> ObjectsIncluded { get => objectsInculed; }
         public int Complexity { get => complexity; }
@@ -33,6 +32,8 @@ namespace KnapSack
             this.weights = weights;
             this.values = values;
             size = n;
+            if (size > 64)
+                throw new ArgumentException("Lengths of arrays should be less as 64");
         }
 
         TableCell Max(TableCell lhs, TableCell rhs)
@@ -56,19 +57,14 @@ namespace KnapSack
                     {
                         var cellBefore = table[itemIdx, j - weights[itemIdx]];
                         val.Value = values[itemIdx] + cellBefore.Value;
-                        if (cellBefore.Objects != null)
-                            val.Objects = new Stack<int>(cellBefore.Objects);
-                        else
-                            val.Objects = new Stack<int>();
-                        val.Objects.Push(itemIdx);
-                    }
+                        val.Objects = cellBefore.Objects | ((ulong)0x1 << itemIdx);
+                   }
                     table[i, j] = Max(table[itemIdx, j], val);
                 }
             }
             complexity = SIZE * W;
 
-            objectsInculed = table[SIZE, W].Objects.ToArray();
-            Array.Sort(objectsInculed);
+            objectsInculed = table[SIZE, W].Objects.FlattenMask();
             return table[SIZE, W].Value;
         }
     }
