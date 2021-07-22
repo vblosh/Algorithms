@@ -9,7 +9,7 @@ namespace KnapSack
 		int size;
 		int recursionCalls;
 		bool[] objectsInculed;
-		Dictionary<Tuple<int, int>, int> memo;
+		Dictionary<(int, int), int> memo;
 		int[] objectsIncluded = new int[1];
 
 		public IEnumerable<int> ObjectsIncluded { get => objectsIncluded; }
@@ -29,7 +29,7 @@ namespace KnapSack
 			this.values = values;
 			size = n;
 			objectsInculed = new bool[SIZE];
-			memo = new Dictionary<Tuple<int, int>, int>();
+			memo = new Dictionary<(int, int), int>();
 		}
 
 		public int SolveKnapSack(int W)
@@ -42,7 +42,7 @@ namespace KnapSack
 		public int KnapSack(int W, int n)
 		{
 			int val;
-			if (memo.TryGetValue(new Tuple<int, int>(W, n), out val))
+			if (memo.TryGetValue((W, n), out val))
 				return val;
 
 			if (n == SIZE || W == 0)
@@ -69,12 +69,12 @@ namespace KnapSack
 				int val2 = KnapSack(W, n + 1);
 				if (val1 > val2)
 				{
-					memo[new Tuple<int, int>(W, n)] = val1;
+					memo[(W, n)] = val1;
 					return val1;
 				}
 				else
 				{
-					memo[new Tuple<int, int>(W, n)] = val2;
+					memo[(W, n)] = val2;
 					return val2;
 				}
 			}

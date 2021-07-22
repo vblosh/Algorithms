@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace KnapSack
@@ -9,7 +8,7 @@ namespace KnapSack
 		int[] weights, values;
 		int size;
 		int recursionCalls;
-		int[] objectsIncluded;
+		IEnumerable<int> objectsIncluded;
 
 		public IEnumerable<int> ObjectsIncluded { get => objectsIncluded; }
 		public int Complexity { get => recursionCalls; }
@@ -22,34 +21,45 @@ namespace KnapSack
 
 		public int Solution { get; }
 
-		public RecursiveSolver(int[] weights, int[] values, int n)
+		public RecursiveSolver(int[] weights, int[] values)
         {
+			if (weights.Length != values.Length)
+				throw new ArgumentException("Lengths of arrays should be equals");
+			size = weights.Length;
+			if(size > 64)
+				throw new ArgumentException("Lengths of arrays should be less as 64");
 			this.weights = weights;
 			this.values = values;
-			size = n;
         }
 
 		public int SolveKnapSack(int W)
         {
-			var ret = KnapSack(new BitArray(SIZE), W, 0);
-			Stack<int> stack = new Stack<int>();
-            for (int i = ret.Item2.Length - 1; i >= 0 ; --i)
-            {
-				if (ret.Item2[i])
-					stack.Push(i);
-            }
-
-			objectsIncluded = stack.ToArray();
-			return ret.Item1;
+            var ret = KnapSack(0, W, 0);
+            List<int> list = FlattenMask(ret.mask);
+            objectsIncluded = list;
+            return ret.val;
         }
 
-		// Returns the maximum valuesue that can
-		// be put in a knapsack of capacity W
-		public Tuple<int, BitArray> KnapSack(BitArray objs, int W, int n)
+        private List<int> FlattenMask(ulong mask)
+        {
+            var list = new List<int>(SIZE);
+            for (int i = 0; i < SIZE; ++i)
+            {
+                if ((mask & 0x1) != 0)
+                    list.Add(i);
+                mask = mask >> 1;
+            }
+
+            return list;
+        }
+
+        // Returns the maximum valuesue that can
+        // be put in a knapsack of capacity W
+        public (int val, ulong mask) KnapSack(ulong mask, int W, int n)
 		{
 			// Base Case
 			if (n == SIZE || W == 0)
-				return new Tuple<int, BitArray>(0, new BitArray(objs));
+				return (0, mask);
 
 			recursionCalls++;
 
@@ -59,7 +69,7 @@ namespace KnapSack
 			// included in the optimal solution
 			if (weights[n] > W)
 			{
-				return KnapSack(new BitArray(objs), W, n + 1);
+				return KnapSack(mask, W, n + 1);
 			}
 
 			// Return the maximum of two cases:
@@ -67,13 +77,12 @@ namespace KnapSack
 			// (2) not included
 			else
 			{
-				var newObjs = new BitArray(objs);
-				newObjs.Set(n, true);
-				var val1 = KnapSack(newObjs, W - weights[n], n + 1);
-				var val2 = KnapSack(new BitArray(objs), W, n + 1);
-				if (values[n] + val1.Item1 > val2.Item1)
+				ulong newMask = mask | ((ulong)0x1 << n);
+				var val1 = KnapSack(newMask, W - weights[n], n + 1);
+				var val2 = KnapSack(mask, W, n + 1);
+				if (values[n] + val1.val > val2.val)
 				{
-					return new Tuple<int, BitArray>(values[n] + val1.Item1, val1.Item2); ;
+					return (values[n] + val1.val, val1.mask); ;
 				}
 				else
 				{

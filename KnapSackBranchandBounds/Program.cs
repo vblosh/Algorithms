@@ -32,10 +32,10 @@ namespace KnapSack
         // Driver code
         public static void Main()
         {
-            int[] val = new int[] { 10, 25, 35, 5, 1, 60, 100, 120, 100, 200 };
-            int[] wt = new int[] { 1, 2, 3, 1, 4, 1, 2, 2, 3, 4 };
-            int W = 10;
-            int N = 10;
+            int[] val = new int[] { 10, 25, 35, 5, 1, 60, 100, 120, 100, 200, 12, 20, 18, 79, 56, 45, 87, 98, 42, 31 };
+            int[] wt = new int[] { 1, 2, 3, 1, 4, 1, 2, 2, 3, 4, 1, 2, 4, 5, 1, 6, 8, 10, 4, 2 };
+            int W = 20;
+            int N = 20;
             /*			for (int j = 1; j <= 10; j++)
                         {
                             for (int i = 1; i <= 10; i++)
@@ -52,7 +52,7 @@ namespace KnapSack
                             }
                         }
             */
-            IKnapSackSolver solver1 = new RecursiveSolver(wt, val, N);
+            IKnapSackSolver solver1 = new RecursiveSolver(wt, val);
             int solution1 = solver1.SolveKnapSack(W);
             PrintSolution(solver1, W, solution1);
 
