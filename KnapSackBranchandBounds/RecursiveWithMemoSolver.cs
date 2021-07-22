@@ -10,9 +10,9 @@ namespace KnapSack
 		int recursionCalls;
 		bool[] objectsInculed;
 		Dictionary<Tuple<int, int>, int> memo;
+		int[] objectsIncluded = new int[1];
 
-
-		public bool[] ObjectsIncluded { get => objectsInculed; }
+		public IEnumerable<int> ObjectsIncluded { get => objectsIncluded; }
 		public int Complexity { get => recursionCalls; }
 
 		public int SIZE { get => size; }
@@ -45,10 +45,11 @@ namespace KnapSack
 			if (memo.TryGetValue(new Tuple<int, int>(W, n), out val))
 				return val;
 
-			recursionCalls++;
-			// Base Case
 			if (n == SIZE || W == 0)
 				return 0;
+
+			recursionCalls++;
+			// Base Case
 
 			// If weight of the nth item is
 			// more than Knapsack capacity W,

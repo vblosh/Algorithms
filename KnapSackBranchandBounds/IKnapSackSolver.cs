@@ -1,8 +1,11 @@
-﻿namespace KnapSack
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace KnapSack
 {
     interface IKnapSackSolver
     {
-		public bool[] ObjectsIncluded { get; }
+		public IEnumerable<int> ObjectsIncluded { get; }
 		public int Complexity { get; }
 
 		public int SIZE { get; }

@@ -1,13 +1,17 @@
-﻿namespace KnapSack
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace KnapSack
 {
     class RecursiveSolver : IKnapSackSolver
     {
 		int[] weights, values;
 		int size;
 		int recursionCalls;
-		bool[] objectsInculed;
+		int[] objectsIncluded;
 
-		public bool[] ObjectsIncluded { get => objectsInculed; }
+		public IEnumerable<int> ObjectsIncluded { get => objectsIncluded; }
 		public int Complexity { get => recursionCalls; }
 
         public int SIZE { get => size; }
@@ -23,22 +27,31 @@
 			this.weights = weights;
 			this.values = values;
 			size = n;
-			objectsInculed = new bool[SIZE];
         }
 
 		public int SolveKnapSack(int W)
         {
-			return KnapSack(W, 0);
+			var ret = KnapSack(new BitArray(SIZE), W, 0);
+			Stack<int> stack = new Stack<int>();
+            for (int i = ret.Item2.Length - 1; i >= 0 ; --i)
+            {
+				if (ret.Item2[i])
+					stack.Push(i);
+            }
+
+			objectsIncluded = stack.ToArray();
+			return ret.Item1;
         }
 
 		// Returns the maximum valuesue that can
 		// be put in a knapsack of capacity W
-		public int KnapSack(int W, int n)
+		public Tuple<int, BitArray> KnapSack(BitArray objs, int W, int n)
 		{
-			recursionCalls++;
 			// Base Case
 			if (n == SIZE || W == 0)
-				return 0;
+				return new Tuple<int, BitArray>(0, new BitArray(objs));
+
+			recursionCalls++;
 
 			// If weight of the nth item is
 			// more than Knapsack capacity W,
@@ -46,7 +59,7 @@
 			// included in the optimal solution
 			if (weights[n] > W)
 			{
-				return KnapSack(W, n + 1);
+				return KnapSack(new BitArray(objs), W, n + 1);
 			}
 
 			// Return the maximum of two cases:
@@ -54,11 +67,13 @@
 			// (2) not included
 			else
 			{
-				int val1 = values[n] + KnapSack(W - weights[n], n + 1);
-				int val2 = KnapSack(W, n + 1);
-				if (val1 > val2)
+				var newObjs = new BitArray(objs);
+				newObjs.Set(n, true);
+				var val1 = KnapSack(newObjs, W - weights[n], n + 1);
+				var val2 = KnapSack(new BitArray(objs), W, n + 1);
+				if (values[n] + val1.Item1 > val2.Item1)
 				{
-					return val1;
+					return new Tuple<int, BitArray>(values[n] + val1.Item1, val1.Item2); ;
 				}
 				else
 				{

@@ -1,14 +1,23 @@
-﻿namespace KnapSack
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace KnapSack
 {
     class TableSolver : IKnapSackSolver
     {
+        struct TableCell
+        {
+            public int Value;
+            public Stack<int> Objects;
+        };
         int[] weights, values;
         int size;
         int complexity;
-        bool[] objectsInculed;
-        int[,] table;
+        TableCell[,] table;
+        int[] objectsInculed;
 
-        public bool[] ObjectsIncluded { get => objectsInculed; }
+        public IEnumerable<int> ObjectsIncluded { get => objectsInculed; }
         public int Complexity { get => complexity; }
 
         public int SIZE { get => size; }
@@ -24,30 +33,43 @@
             this.weights = weights;
             this.values = values;
             size = n;
-            objectsInculed = new bool[SIZE];
+        }
+
+        TableCell Max(TableCell lhs, TableCell rhs)
+        {
+            return lhs.Value > rhs.Value ? lhs : rhs;
         }
 
         // Returns the maximum valuesue that can
         // be put in a knapsack of capacity W
         public int SolveKnapSack(int W)
         {
-            table = new int[SIZE + 1, W + 1];
+            table = new TableCell[SIZE + 1, W + 1];
 
             for (int i = 1; i <= SIZE; i++)
             {
                 for (int j = 1; j <= W; j++)
                 {
-                    int val = 0;
-                    if (weights[i - 1] <= j)
+                    TableCell val = new TableCell();
+                    int itemIdx = i - 1;
+                    if (weights[itemIdx] <= j)
                     {
-                        val = values[i - 1] + table[i - 1, j - weights[i - 1]];
+                        var cellBefore = table[itemIdx, j - weights[itemIdx]];
+                        val.Value = values[itemIdx] + cellBefore.Value;
+                        if (cellBefore.Objects != null)
+                            val.Objects = new Stack<int>(cellBefore.Objects);
+                        else
+                            val.Objects = new Stack<int>();
+                        val.Objects.Push(itemIdx);
                     }
-                    table[i, j] = Helper.max(table[i - 1, j], val);
+                    table[i, j] = Max(table[itemIdx, j], val);
                 }
             }
             complexity = SIZE * W;
 
-            return table[SIZE, W];
+            objectsInculed = table[SIZE, W].Objects.ToArray();
+            Array.Sort(objectsInculed);
+            return table[SIZE, W].Value;
         }
     }
 }
