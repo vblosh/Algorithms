@@ -44,14 +44,14 @@ namespace LinqIntersection
 
         int CountIntersectHashset()
         {
-            System.Collections.Generic.HashSet<int> hashTable = new System.Collections.Generic.HashSet<int>(set1);
+            var hashTable = new System.Collections.Generic.HashSet<int>(set1);
             var qry = hashTable.Intersect(set2);
             return qry.Count();
         }
 
         int CountIntersectHashTable()
         {
-            PnP.Collections.HashTable<int, int> hashTable = new PnP.Collections.HashTable<int, int>(set1.Length);
+            var hashTable = new PnP.Collections.HashTable<int, int>(set1.Length);
             for (int i = 0; i < set1.Length; i++)
             {
                 hashTable.Add(set1[i], i);
@@ -66,6 +66,24 @@ namespace LinqIntersection
             return cnt;
         }
 
+        int CountIntersectHashSetPnP()
+        {
+            var hashTable = new PnP.Collections.HashSet<int>(set1.Length);
+            for (int i = 0; i < set1.Length; i++)
+            {
+                hashTable.Add(set1[i]);
+            }
+
+            int cnt = 0;
+            for (int i = 0; i < N; i++)
+            {
+                if (hashTable.Contains(set2[i]))
+                    cnt++;
+            }
+            return cnt;
+        }
+
+
         static void Main(string[] args)
         {
             Program pr = new Program();
@@ -76,19 +94,24 @@ namespace LinqIntersection
             Stopwatch sw = new Stopwatch();
             int n;
             sw.Restart();
+            n = pr.CountIntersectHashSetPnP();
+            sw.Stop();
+            Console.WriteLine($"HashSetPnP Intersect={n}, Elapsed {sw.Elapsed.TotalMilliseconds} ms");
+
+            sw.Restart();
             n = pr.CountIntersectHashTable();
             sw.Stop();
-            Console.WriteLine($"HashTable Intersect={n}, Elapsed {sw.ElapsedTicks} ticks");
+            Console.WriteLine($"HashTable Intersect={n}, Elapsed {sw.Elapsed.TotalMilliseconds} ms");
 
             sw.Restart();
             n = pr.CountIntersectHashset();
             sw.Stop();
-            Console.WriteLine($"Hashset Intersect={n}, Elapsed {sw.ElapsedTicks} ticks");
+            Console.WriteLine($"Hashset Intersect={n}, Elapsed {sw.Elapsed.TotalMilliseconds} ms");
 
             sw.Restart();
             n = pr.CountIntersect();
             sw.Stop();
-            Console.WriteLine($"Linq Intersect={n}, Elapsed {sw.ElapsedTicks} ticks");
+            Console.WriteLine($"Linq Intersect={n}, Elapsed {sw.Elapsed.TotalMilliseconds} ms");
         }
     }
 }

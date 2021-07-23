@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 
 namespace PnP.Collections
 {
@@ -22,10 +23,10 @@ namespace PnP.Collections
         public bool Add(T key)
         {
             var foundRes = FindKey(key);
-            bool found = foundRes.Item1;
+            bool found = foundRes.found;
             if (!found)
             {
-                var pos = foundRes.Item2;
+                var pos = foundRes.pos;
                 used[pos] = true;
                 keys[pos] = key;
             }
@@ -35,10 +36,10 @@ namespace PnP.Collections
         public bool Remove(T key)
         {
             var foundRes = FindKey(key);
-            bool found = foundRes.Item1;
+            bool found = foundRes.found;
             if (found)
             {
-                var pos = foundRes.Item2;
+                var pos = foundRes.pos;
                 used[pos] = false;
             }
             return found;
@@ -47,7 +48,7 @@ namespace PnP.Collections
         public bool Contains(T key)
         {
             var found = FindKey(key);
-            return found.Item1;
+            return found.found;
         }
 
         /// <summary>
@@ -66,7 +67,13 @@ namespace PnP.Collections
             probingSeed = 0;
         }
 
-        private Tuple<bool, int> FindKey(T item)
+        [Conditional("DEBUG")]
+        private void CountProbing()
+        {
+            probingCount += probingSeed;
+        }
+
+        private (bool found, int pos) FindKey(T item)
         {
             int pos = item.GetHashCode() % size;
             InitProbing();
@@ -74,9 +81,9 @@ namespace PnP.Collections
             {
                 pos = Probing(pos);
             }
-            probingCount += probingSeed;
+            CountProbing();
             bool found = used[pos] && keys[pos].CompareTo(item) == 0;
-            return new Tuple<bool, int>(found, pos);
+            return (found, pos);
         }
     }
 }
