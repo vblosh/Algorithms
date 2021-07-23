@@ -1,0 +1,24 @@
+Best deal brute force O(N^2) earning=9.99717913567889 and 99.9997579492627, elapsed time=126569 and 14729555, factor=116.375692310123
+Best deal devide&conquer O(N*logN) earning=9.99717913567889 and 99.9997579492627, elapsed time=1514 and 12248, factor=8.08982826948481
+Best deal devide&conquer O(N) earning=9.99717913567889 and 99.9997579492627, elapsed time=825 and 8943, factor=10.84
+Best deal iterative O(N) earning=9.99717913567889 and 99.9997579492627, elapsed time=77 and 894, factor=11.6103896103896
+Best deal iterative Kadane algorithm O(N) earning=9.99717913567889 and 99.9997579492627, elapsed time=73 and 724, factor=9.91780821917808
+
+
+IList<double>
+Best deal brute force O(N^2) earning=9.99717913567889 and 99.9997579492627, elapsed time=732086 and 91703218, factor=125.262903538655
+Best deal devide&conquer O(N*logN) earning=9.99717913567889 and 99.9997579492627, elapsed time=1945 and 24807, factor=12.7542416452442
+Best deal devide&conquer O(N) earning=9.99717913567889 and 99.9997579492627, elapsed time=866 and 8023, factor=9.26443418013857
+Best deal iterative O(N) earning=9.99717913567889 and 99.9997579492627, elapsed time=216 and 2397, factor=11.0972222222222
+Best deal iterative Kadane algorithm O(N) earning=9.99717913567889 and 99.9997579492627, elapsed time=144 and 1461, factor=10.1458333333333
+
+
+Best deal brute force O(N^2) earning=9.94222300124458, operation count=999000
+Best deal devide&conquer O(N*logN) earning=9.94222300124458, operation count=11131
+Best deal devide&conquer O(N) earning=9.94222300124458, operation count=1000
+Best deal iterative O(N) earning=9.94222300124458, operation count=2997
+Best deal iterative Kadane O(N) earning=9.94222300124458, operation count=1000
+
+use_proxy=yes
+http_proxy=http://v.bloshchanevich:Yxcv$321@10.155.48.32:8080
+https_proxy=https://v.bloshchanevich:Yxcv$321@10.155.48.32:8080
