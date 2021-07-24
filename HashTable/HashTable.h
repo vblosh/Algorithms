@@ -61,8 +61,8 @@ public:
 			return tmp;
 		}
 
-		bool operator==(const const_noconst_iterator& rhs) const { return pos == rhs.pos; }
-		bool operator!=(const const_noconst_iterator& rhs) const { return pos != rhs.pos; }
+		bool operator==(const const_noconst_iterator& rhs) const { return parent = rhs.parent && pos == rhs.pos; }
+		bool operator!=(const const_noconst_iterator& rhs) const { return parent = rhs.parent && pos != rhs.pos; }
 		
 		iterator_item operator*() 
 		{
