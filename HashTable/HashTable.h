@@ -30,8 +30,13 @@ public:
 	};
 
 	template<bool is_const_iterator = true>
-	class const_noconst_iterator : public std::iterator<std::forward_iterator_tag, key_ref>
+	class const_noconst_iterator
 	{
+		typedef std::forward_iterator_tag iterator_category;
+		typedef iterator_item value_type;
+		typedef value_type& reference;
+		typedef value_type* pointer;
+		typedef std::ptrdiff_t difference_type;
 		typedef typename std::conditional<is_const_iterator, const hash_table_type*, hash_table_type*>::type parent_pointer_type;
 
 		parent_pointer_type parent;
@@ -61,9 +66,9 @@ public:
 			return tmp;
 		}
 
-		bool operator==(const const_noconst_iterator& rhs) const { return parent = rhs.parent && pos == rhs.pos; }
-		bool operator!=(const const_noconst_iterator& rhs) const { return parent = rhs.parent && pos != rhs.pos; }
-		
+		bool operator==(const const_noconst_iterator& rhs) const { return parent == rhs.parent && pos == rhs.pos; }
+		bool operator!=(const const_noconst_iterator& rhs) const { return !(*this == rhs); }
+
 		iterator_item operator*() 
 		{
 			return iterator_item{ parent->keys[pos], parent->items[pos] };
