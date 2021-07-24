@@ -103,6 +103,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntervalSum", "IntervalSum\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ranges", "Ranges\Ranges.vcxproj", "{534F47DF-A916-4CF6-AB41-F1B0E0DD88BA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "worter", "worter\worter.vcxproj", "{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -617,6 +619,16 @@ Global
 		{534F47DF-A916-4CF6-AB41-F1B0E0DD88BA}.Release|x64.Build.0 = Release|x64
 		{534F47DF-A916-4CF6-AB41-F1B0E0DD88BA}.Release|x86.ActiveCfg = Release|Win32
 		{534F47DF-A916-4CF6-AB41-F1B0E0DD88BA}.Release|x86.Build.0 = Release|Win32
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Debug|x64.ActiveCfg = Debug|x64
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Debug|x64.Build.0 = Debug|x64
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Debug|x86.ActiveCfg = Debug|Win32
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Debug|x86.Build.0 = Debug|Win32
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Release|Any CPU.ActiveCfg = Release|Win32
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Release|x64.ActiveCfg = Release|x64
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Release|x64.Build.0 = Release|x64
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Release|x86.ActiveCfg = Release|Win32
+		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
