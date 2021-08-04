@@ -1,4 +1,5 @@
-People connect with each other in a social network. A connection between Person  and Person  is represented as . When two persons belonging to different communities connect, the net effect is the merger of both communities which  and  belongs to.
+People connect with each other in a social network. A connection between Person  and Person  is represented as . 
+When two persons belonging to different communities connect, the net effect is the merger of both communities which  and  belongs to.
 
 At the beginning, there are  people representing  communities. Suppose person  and  connected and later and  connected, then ,, and  will belong to the same community.
 

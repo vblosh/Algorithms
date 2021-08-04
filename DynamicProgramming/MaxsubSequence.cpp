@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "Header.h"
 
-int_arr MaxSubSequince(int_arr& a, size_t N)
+std::vector<int_arr> MaxSubSequence(int_arr& a, size_t N)
 {
-	int_arr d(N);
-	int_arr prev(N);
+	int_arr d(N);	// partial solution
+	int_arr prev(N);	// linked list of partial solution indexes
 	for (size_t i = 0; i < N; i++)
 	{
 		d[i] = 1;
@@ -22,23 +22,19 @@ int_arr MaxSubSequince(int_arr& a, size_t N)
 		}
 	}
 
-	int_arr max_sub_seq;
-	int max_idx = 0;
-	for (size_t i = 1; i < N; i++)
+	std::vector<int_arr> max_sub_seq;
+	int max_subs_len = d[N-1];
+	for (size_t i = N-1; d[i] == max_subs_len; --i)
 	{
-		if (d[i] > d[max_idx])
+		size_t idx = i;
+		max_sub_seq.push_back(int_arr());
+		do
 		{
-			max_idx = i;
-		}
+			max_sub_seq[max_sub_seq.size()-1].push_back(a[idx]);
+			idx = prev[idx];
+		} while (idx != -1);
+		std::reverse(max_sub_seq[max_sub_seq.size() - 1].begin(), max_sub_seq[max_sub_seq.size() - 1].end());
 	}
-
-	int idx = max_idx;
-	do
-	{
-		max_sub_seq.push_back(a[idx]);
-		idx = prev[idx];
-	} while (idx != -1);
-	std::reverse(max_sub_seq.begin(), max_sub_seq.end());
 
 	return max_sub_seq;
 }

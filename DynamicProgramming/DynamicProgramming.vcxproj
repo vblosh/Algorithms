@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DynamicProgramming.cpp" />
+    <ClCompile Include="MaxCommonSubstring.cpp" />
     <ClCompile Include="MaxsubSequence.cpp" />
     <ClCompile Include="RueckSack.cpp" />
     <ClCompile Include="stdafx.cpp">

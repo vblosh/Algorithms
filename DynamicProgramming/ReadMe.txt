@@ -1,40 +1,32 @@
-========================================================================
-    CONSOLE APPLICATION : DynamicProgramming Project Overview
-========================================================================
+﻿/////////////////////////////////////////////////////////////////////////////
 
-AppWizard has created this DynamicProgramming application for you.
-
-This file contains a summary of what you will find in each of the files that
-make up your DynamicProgramming application.
+An Introduction to the Longest Increasing Subsequence Problem
+The task is to find the length of the longest subsequence in a given array of integers such that all elements of the subsequence are sorted in strictly ascending order. 
+This is called the Longest Increasing Subsequence (LIS) problem.
+For example, the length of the LIS for [5 2 8 6 3 6 9 7] is [4] since the longest increasing subsequence is {2,3,6,9}.
 
 
-DynamicProgramming.vcxproj
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
+Knapsack function
+Given an array of integers and a target sum, determine the sum nearest to but not exceeding the target that can be created. To create the sum, use any element of your array zero or one time.
+For example, if arr=[2,3,4] and your target sum is 10, you might select [2,2,2,2,2] or [2,2,3,3] or [3,3,3,1]. In this case, you can arrive at exactly the target.
+Function Description
+Complete the unboundedKnapsack function in the editor below. It must return an integer that represents the sum nearest to without exceeding the target value.
+unboundedKnapsack has the following parameter(s):
 
-DynamicProgramming.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
 
-DynamicProgramming.cpp
-    This is the main application source file.
+unboundedKnapsack function
+Given an array of integers and a target sum, determine the sum nearest to but not exceeding the target that can be created. To create the sum, use any element of your array zero or more times.
+For example, if arr=[2,3,4] and your target sum is 10, you might select [2,2,2,2,2] or [2,2,3,3] or [3,3,3,1]. In this case, you can arrive at exactly the target.
+Function Description
+Complete the unboundedKnapsack function in the editor below. It must return an integer that represents the sum nearest to without exceeding the target value.
+unboundedKnapsack has the following parameter(s):
 
-/////////////////////////////////////////////////////////////////////////////
-Other standard files:
 
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named DynamicProgramming.pch and a precompiled types file named StdAfx.obj.
-
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
-
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
+Самая длинная общая подпоследовательность
+Предположим , Алекс ввел строку fosh. Какое слово он имел в виду: fish
+илиfоrt?
+Мы сравниваем самую длинную общую подстроку, а на самом деле нужно
+сравнивать самую длинную общую подпоследовательность: количество
+букв в последовательности, общих для двух слов.
 
 /////////////////////////////////////////////////////////////////////////////

@@ -16,7 +16,7 @@ std::pair<int, int_arr> KnapSackUnbounded(int_arr& w, int_arr& v, int n, int W)
 	{
 		int max = INT_MIN;
 		size_t max_idx = -1;
-		for (size_t i = 0; i < n; i++)
+		for (int i = 0; i < n; i++)
 		{
 			if (w[i] <= iw)
 			{
@@ -53,9 +53,9 @@ std::pair<int, int_arr> KnapSackUnbounded(int_arr& w, int_arr& v, int n, int W)
 int KnapSack(int_arr& w, int_arr& v, int n, int W)
 {
 	std::vector<int_arr> K(n+1, int_arr(W + 1));
-	for (size_t j = 1; j <= n; j++)
+	for (int j = 1; j <= n; j++)
 	{
-		for (size_t iw = 0; iw <= W; iw++)
+		for (int iw = 0; iw <= W; iw++)
 		{
 			if (w[j-1] > iw)
 			{

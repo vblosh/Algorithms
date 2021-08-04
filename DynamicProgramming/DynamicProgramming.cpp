@@ -9,7 +9,7 @@ using namespace std;
 template<class _Ty>
 ostream& operator << (ostream& stream, std::vector<_Ty, std::allocator<_Ty>> vec)
 {
-	stream << '[' << vec.size() << "]{";
+	stream << "(size = " << vec.size() << ")[";
 	if (vec.size() > 0)
 	{
 		for (size_t i = 0; i < vec.size() - 1; i++)
@@ -18,7 +18,7 @@ ostream& operator << (ostream& stream, std::vector<_Ty, std::allocator<_Ty>> vec
 		}
 		stream << vec[vec.size() - 1];
 	}
-	stream <<  '}';
+	stream <<  ']';
 	return stream;
 }
 
@@ -32,7 +32,7 @@ int main()
 		cin >> arr[i];
 	}
 
-	cout << "max SubSequince is " << MaxSubSequince(arr, N) << endl;
+	cout << "max SubSequince is " << MaxSubSequence(arr, N) << endl;
 
 	cin >> N;	// num of items
 	int_arr w(N); // weight of item[i]
@@ -49,6 +49,13 @@ int main()
 
 	auto cnt = KnapSack(w, v, N, W);
 	cout << "max cost of the knapsack  " << cnt << endl;
+
+	std::string str1, str2;
+	cin >> str1;
+	cin >> str2;
+	auto res1 = MaxCommonSunstring(str1, str2);
+	cout << "the longest common substring of two strings " << str1 << " and " << str2 << " is [" << res1 << "]" << endl;
+
 	return 0;
 }
 
