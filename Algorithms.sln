@@ -105,6 +105,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ranges", "Ranges\Ranges.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "worter", "worter\worter.vcxproj", "{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HotelBookingConflicts", "HotelBookingConflicts\HotelBookingConflicts.vcxproj", "{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -629,6 +631,16 @@ Global
 		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Release|x64.Build.0 = Release|x64
 		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Release|x86.ActiveCfg = Release|Win32
 		{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}.Release|x86.Build.0 = Release|Win32
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Debug|x64.ActiveCfg = Debug|x64
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Debug|x64.Build.0 = Debug|x64
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Debug|x86.ActiveCfg = Debug|Win32
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Debug|x86.Build.0 = Debug|Win32
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Release|Any CPU.ActiveCfg = Release|Win32
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Release|x64.ActiveCfg = Release|x64
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Release|x64.Build.0 = Release|x64
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Release|x86.ActiveCfg = Release|Win32
+		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
