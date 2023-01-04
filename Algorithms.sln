@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinarySearch", "BinarySearch\BinarySearch.vcxproj", "{41E1AFF0-F3E8-493E-8109-498AB1AC1C5A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CounterSort", "CounterSort\CounterSort.vcxproj", "{A08C3246-019E-43D4-AD58-62291C90ACCF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CountingSort", "CounterSort\CounterSort.vcxproj", "{A08C3246-019E-43D4-AD58-62291C90ACCF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphDecomposition", "GraphSearch\GraphSearch.vcxproj", "{CF4EEDFC-B559-42A6-B1DE-BE9C1025014A}"
 EndProject
@@ -106,6 +106,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "worter", "worter\worter.vcxproj", "{10B9E2D0-8D1A-4061-A5A5-C4107F1F506B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HotelBookingConflicts", "HotelBookingConflicts\HotelBookingConflicts.vcxproj", "{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HuffmanDecode", "HuffmanDecode\HuffmanDecode.vcxproj", "{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HuffmanEncode", "HuffmanEncode\HuffmanEncode.vcxproj", "{A56ECA52-8127-4101-BD97-77BB40174E19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -641,6 +645,30 @@ Global
 		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Release|x64.Build.0 = Release|x64
 		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Release|x86.ActiveCfg = Release|Win32
 		{EE7DB4A9-6204-4A3B-BDAF-A05C427EB817}.Release|x86.Build.0 = Release|Win32
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Debug|Any CPU.Build.0 = Debug|x64
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Debug|x64.ActiveCfg = Debug|x64
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Debug|x64.Build.0 = Debug|x64
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Debug|x86.ActiveCfg = Debug|Win32
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Debug|x86.Build.0 = Debug|Win32
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Release|Any CPU.ActiveCfg = Release|x64
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Release|Any CPU.Build.0 = Release|x64
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Release|x64.ActiveCfg = Release|x64
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Release|x64.Build.0 = Release|x64
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Release|x86.ActiveCfg = Release|Win32
+		{6E7B6253-5948-441D-8A1A-9106CCEA1F1D}.Release|x86.Build.0 = Release|Win32
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Debug|Any CPU.Build.0 = Debug|x64
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Debug|x64.ActiveCfg = Debug|x64
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Debug|x64.Build.0 = Debug|x64
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Debug|x86.ActiveCfg = Debug|Win32
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Debug|x86.Build.0 = Debug|Win32
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Release|Any CPU.ActiveCfg = Release|x64
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Release|Any CPU.Build.0 = Release|x64
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Release|x64.ActiveCfg = Release|x64
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Release|x64.Build.0 = Release|x64
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Release|x86.ActiveCfg = Release|Win32
+		{A56ECA52-8127-4101-BD97-77BB40174E19}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
